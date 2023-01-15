@@ -1,0 +1,22 @@
+.first__screen{
+  &-content{
+    max-width: 500px;
+  }
+  &-img{
+    margin-left: 100px;
+    img{
+      max-width: 550px;
+      width: 100%;
+      height: auto;
+    }
+  }
+  &-subtitle{
+    margin-bottom: 24px;
+  }
+  &-title{
+    margin-bottom: 24px;
+  }
+  &-text{
+    margin-bottom: 34px;
+  }
+}

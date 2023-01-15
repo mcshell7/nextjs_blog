@@ -1,0 +1,26 @@
+.summary {
+  &__items{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    border: 1px solid $primary-light;
+    border-radius: $border-r-form;
+  }
+  &__item{
+    padding: 45px;
+    &:not(:last-child){
+      border-right: 1px solid $primary-light;
+    }
+  }
+  &__count{
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 15px;
+
+  }
+  &__name{
+    font-size: 20px;
+    line-height: 1.4em;
+
+  }
+}

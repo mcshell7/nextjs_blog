@@ -1,0 +1,32 @@
+.section{
+  &.dark.line-bottom{
+    border-bottom: 1px solid $primary-light;
+  }
+  &.dark{
+    background-color: $dark-bg-color;
+    color: $bg-color;
+    p{
+      color: rgba($white, .64);
+    }
+  }
+  &.light.line-bottom{
+    border-bottom: 1px solid $primary-light;
+  }
+  &.dark .section-subtitle, &.light .section-subtitle{
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: $primary;
+  }
+  &-flex{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 120px 0 80px;
+  }
+}
+.section-blog{
+
+}

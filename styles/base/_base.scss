@@ -1,0 +1,28 @@
+a{
+  @include on-event {
+    opacity: .7;
+  }
+}
+body{
+  color: $dark-color;
+}
+p{
+  //color: rgba($white, .64)
+  margin: 0 0 15px 0;
+
+}
+section{
+  padding: 100px 0;
+}
+mark{
+  background-color: $color-mark;
+  color: $white;
+  padding: 3px;
+}
+p{
+  color: rgba($dark-color,0.64);
+  > a{
+    color: $color-link;
+    padding: 3px;
+  }
+}

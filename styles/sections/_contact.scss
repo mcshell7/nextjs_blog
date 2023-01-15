@@ -1,0 +1,29 @@
+.contact{
+  padding: 170px 0 200px;
+  background-color: $dark-bg-color;
+  &__info-icon{
+    width: 48px;
+    height: 48px;
+    background-color: $primary;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 1rem;
+    .icon{
+      @include centerer;
+    }
+  }
+  &__info-item{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  &__info-text{
+    margin: 0;
+  }
+  a{
+    margin: 0;
+  }
+  .button--submit{
+    display: block;
+  }
+}

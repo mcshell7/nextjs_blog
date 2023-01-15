@@ -1,0 +1,44 @@
+input,textarea{
+  height: 48px;
+  width: 100%;
+  //max-width: 375px;
+  color: rgba($dark-color, 0.64);
+  padding: 9px 16px 7px;
+  border-radius: $border-r-form;
+  border: 1px solid $primary-light;
+  outline: none;
+  @include transition(1s ease );
+  @include on-event {
+    border: 1px solid $primary;
+  }
+}
+textarea {
+  min-height: 120px;
+}
+
+.form{
+  padding: 57px 48px 48px 48px;
+  background-color: $white;
+  max-width: 570px;
+  width: 100%;
+  border-radius: $border-r-form;
+  &__item{
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  &__success{
+    padding: 57px 48px 48px 48px;
+    background-color: $white;
+    max-width: 570px;
+    width: 100%;
+    border-radius: $border-r-form;
+    h2{
+      font-size: 30px;
+      line-height: 1.3em;
+    }
+    p{
+      color: $dark-color;
+      font-size: 20px;
+    }
+  }
+}

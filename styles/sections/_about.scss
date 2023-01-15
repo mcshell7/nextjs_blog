@@ -1,0 +1,54 @@
+.section-about{
+  .inner{
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 50px;
+  }
+  .img{
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    img{
+      z-index: 1;
+      position: relative;
+      border-radius: $border-r-form;
+    }
+    &:before{
+      z-index: 0;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      right: -15px;
+      top: 15px;
+      border: 1px solid $primary;
+      border-radius: $border-r-form;
+      transition: all ease-in-out $transition-default;
+    }
+    &:after{
+      z-index: 2;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      right: 0;
+      top: 0;
+      background-color: rgba($primary,0.12);
+      border-radius: $border-r-form;
+      transition: all ease-in-out $transition-default;
+    }
+    &:hover{
+      &:after{
+        background: transparent;
+        transition: all ease-in-out $transition-default;
+
+      }
+      &:before{
+        transition: all ease-in-out $transition-default;
+
+        right: -8px;
+        top: 8px;
+      }
+    }
+  }
+}

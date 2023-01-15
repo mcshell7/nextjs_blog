@@ -1,0 +1,46 @@
+@for $i from 1 through 3 {
+  .h#{$i}{
+    &.light{
+      color: white;
+    }
+    &.dark{
+      color: #391400;
+    }
+    &.center{
+      text-align: center;
+    }
+    &.left{
+      text-align: left;
+    }
+    &.right{
+      text-align: right;
+    }
+  }
+}
+.h1,.heading-1{
+  font-size: 72px;
+  line-height: 80px;
+}
+h2,.heading-2{
+  font-size: 56px;
+  line-height: 64px;
+}
+h3,.heading-3{
+  font-size: 40px;
+  line-height: 48px;
+}
+h4,.heading-4{
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+}
+h5,.heading-5{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+}
+.text-big{
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+}

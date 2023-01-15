@@ -1,0 +1,26 @@
+.footer{
+  flex-shrink: 0;
+}
+.inner{
+  padding: 25px 0;
+  //border-top: 1px solid #F3D1BF;
+}
+.copyright{
+  margin: 0;
+  color: rgba(#fff, 0.64);
+}
+.flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav{
+  display: flex;
+  align-items: center;
+
+  li{
+    margin: 0;
+    padding: 0 10px;
+  }
+
+}

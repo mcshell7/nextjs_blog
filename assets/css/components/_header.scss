@@ -1,0 +1,36 @@
+.header{
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  .logo{
+    line-height: 1;
+    font-size: 12px;
+    color: white;
+    text-transform: uppercase;
+  }
+
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+  }
+  .menu{
+    &.list{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-transform: capitalize;
+    }
+    &__list-item{
+      &:not(:last-child){
+        margin-right: 40px;
+      }
+    }
+    a{
+      color: $white;
+    }
+  }
+}
