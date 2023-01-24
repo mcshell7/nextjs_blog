@@ -24,7 +24,7 @@ const Home = ({ articles, headerNav, homepage, nav }) => {
   const imageUrl = getStrapiMedia(homeData.FirstScreen.img);
 
   return (
-      <Layout headerNav={headerNav}>
+      <Layout mainClass="main--index" headerNav={headerNav} headerClass="header__single">
         <Seo seo={homeData.seo} />
         <StdSection text={homeData.FirstScreen.text} title={homeData.FirstScreen.title} subtitle={homeData.FirstScreen.subtitle} button={button}  image={imageUrl}/>
         <Summary />

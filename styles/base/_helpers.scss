@@ -149,9 +149,11 @@ button{
   background-color: $dark-bg-color!important;
 }
 .main{
-  padding-top: 150px;
+  padding-top: 78px;
   flex: 1 0 auto;
-
+  &--index{
+    padding-top: 0;
+  }
 }
 .first__screen{
 }

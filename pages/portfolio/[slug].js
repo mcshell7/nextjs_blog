@@ -19,16 +19,14 @@ const Portfolio = ({ article, headerNav }) => {
         title: article.attributes.name,
         content: article.attributes.content,
         date: article.attributes.createdAt,
-        img: getStrapiMedia(article.attributes.image),
+        img: article.attributes.image,
         backTo: "portfolio"
     }
 
     return (
-        <Layout headerClass="header__single" headerNav={headerNav.data}>
+        <Layout  headerClass="header__single" headerNav={headerNav.data}>
             <Seo seo={seo} />
-            <main className="main">
-                <PortfolioSingle item={item} />
-            </main>
+            <PortfolioSingle item={item} />
         </Layout>
     );
 };

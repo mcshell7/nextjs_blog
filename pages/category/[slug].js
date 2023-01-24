@@ -4,19 +4,18 @@ import Articles from "../../components/Articles";
 
 import { fetchAPI } from "../../lib/api";
 
-const Category = ({ category, categories }) => {
+const Category = ({ category, categories, headerNav }) => {
     const seo = {
         metaTitle: category.attributes.name,
         metaDescription: `All ${category.attributes.name} articles`,
     };
-
+    console.log(category.attributes);
     return (
-        <Layout categories={categories.data}>
+        <Layout headerNav={headerNav} headerClass="header__single" >
             <Seo seo={seo} />
             <div className="category__list">
                 <div className="container container-lg">
-                    <h1>{category.attributes.name}</h1>
-                    <Articles articles={category.attributes.articles.data} />
+                    <Articles articles={category.attributes.articles.data} title={category.attributes.name} />
                 </div>
             </div>
         </Layout>
@@ -46,11 +45,12 @@ export async function getStaticProps({ params }) {
         },
     });
     const allCategories = await fetchAPI("/categories");
-
+    const headerNavRes = await fetchAPI("/navs", { populate: "*" });
     return {
         props: {
             category: matchingCategories.data[0],
             categories: allCategories,
+            headerNav: headerNavRes.data
         },
         revalidate: 1,
     };

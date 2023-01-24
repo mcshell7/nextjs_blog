@@ -5,12 +5,10 @@ import AboutSection from "../components/AboutSection";
 const About = ({headerNav, about}) => {
 
     return (
-        <Layout headerNav={headerNav} headerClass="header__single" >
-            <main className="main">
-                <div className="container container-sm">
-                    <AboutSection about={about} />
-                </div>
-            </main>
+        <Layout mainClass="main--about" headerNav={headerNav} headerClass="header__single" >
+            <div className="container container-sm">
+                <AboutSection about={about} />
+            </div>
         </Layout>
     );
 };

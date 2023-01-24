@@ -1,11 +1,21 @@
 import Header from "./Header";
 import {fetchAPI} from "../lib/api";
 import Footer from "./Footer";
+import cx from "classnames";
+import styles from "../styles/footer.module.scss";
 
-const Layout = ({ children, headerNav, seo, headerClass }) => (
+const Layout = ({ children, headerNav, seo, headerClass, mainClass }) => (
     <>
         <Header headerClass={headerClass} headerNav={headerNav}/>
-        {children}
+        <main
+            className={
+                cx(
+                    { [`${'main'} ${mainClass !== undefined ? mainClass : ''}`]: true}
+                )
+            }
+        >
+            {children}
+        </main>
         <Footer  />
     </>
 );

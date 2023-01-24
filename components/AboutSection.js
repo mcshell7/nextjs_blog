@@ -6,10 +6,10 @@ import GetImage from "./GetImage";
 
 const AboutSection = ({about}) => {
 
-
     const content = {
         text: about.attributes.descr,
         title: about.attributes.title,
+        img: about.attributes.image
     }
 
     return (
@@ -24,7 +24,7 @@ const AboutSection = ({about}) => {
 
                     <div className="right">
                         <div className="img">
-                            <GetImage data={about}/>
+                            <GetImage data={content.img}/>
                         </div>
                     </div>
                 </div>

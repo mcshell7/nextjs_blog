@@ -2,27 +2,17 @@ import Seo from "../../components/seo";
 import Layout from "../../components/layout";
 import {fetchAPI} from "../../lib/api";
 import PortfolioCard from "../../components/PortfolioCard";
+import PortfolioList from "../../components/PortfolioList";
 
-const PortfolioList = ({ items, headerNav, homepage }) => {
+const Portfolio = ({ items, headerNav, homepage }) => {
+
 
     return (
         <Layout headerNav={headerNav} headerClass="header__single">
             <Seo seo={homepage.attributes.seo} />
-            <main className="main">
-                <div className="container container-lg">
-                    {/*<h1>{category.attributes.name}</h1>*/}
-                    <div className="flex items"  >
-                    {items.map((item) => {
-                        return (
-                            <PortfolioCard
-                                item={item}
-                                key={item.attributes.slug}
-                            />
-                        );
-                    })}
-                    </div>
-                </div>
-            </main>
+            <div className="container container-lg">
+                <PortfolioList items={items} title="Portfolio" />
+            </div>
         </Layout>
     );
 };
@@ -48,4 +38,4 @@ export async function getStaticProps() {
     };
 }
 
-export default PortfolioList;
+export default Portfolio;

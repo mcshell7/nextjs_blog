@@ -1,9 +1,10 @@
 .header{
   background: transparent;
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 10;
   .logo{
     line-height: 1;
     font-size: 12px;
@@ -27,6 +28,10 @@
     &__list-item{
       &:not(:last-child){
         margin-right: 40px;
+      }
+      .active{
+        opacity: 0.7;
+        cursor: auto;
       }
     }
     a{

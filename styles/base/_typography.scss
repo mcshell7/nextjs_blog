@@ -45,4 +45,17 @@ h5,.heading-5{
   font-size: 20px;
   line-height: 32px;
 }
-
+.btn {
+  &--radius{
+    border-radius: 14px;
+    padding: 8px 14px 5px;
+    line-height: 2em;
+    font-size: 12px;
+    display: inline;
+    z-index: 5;
+  }
+  &--white{
+    background-color: $white;
+    color: $dark-color;
+  }
+}

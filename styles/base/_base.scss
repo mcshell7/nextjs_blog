@@ -1,6 +1,8 @@
 a{
+  outline: 0;
   @include on-event {
     opacity: .7;
+    outline: 0;
   }
 }
 body{

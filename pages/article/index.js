@@ -9,12 +9,10 @@ const Blog = ({ articles, headerNav, homepage }) => {
     return (
         <Layout headerNav={headerNav} headerClass="header__single">
             <Seo seo={homepage.attributes.seo} />
-            <main className="main">
                 <div className="container container-lg">
                     {/*<h1>{category.attributes.name}</h1>*/}
-                    <Articles articles={articles} />
+                    <Articles articles={articles} title="Blog" />
                 </div>
-            </main>
         </Layout>
     );
 };

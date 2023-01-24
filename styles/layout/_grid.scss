@@ -56,3 +56,15 @@
     flex-shrink: 0;
   }
 }
+
+.grid {
+  display: grid;
+  &-2-col{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.gap{
+  &-sm {
+    grid-gap: 15px;
+  }
+}

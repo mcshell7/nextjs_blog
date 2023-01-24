@@ -2,12 +2,12 @@ import {getStrapiMedia} from "../lib/media";
 
 const GetImage = ({data}) => {
 
-    const url = data.attributes.image.data !== null ? getStrapiMedia(data.attributes.image) : null;
+    const url = data != null ? getStrapiMedia(data) : null;
 
     return (
         <>
             {
-                url != null ?
+                url !== null ?
                     <img
                         src={url} alt=""
                         className="hookImg"

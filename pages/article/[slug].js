@@ -10,7 +10,7 @@ import Single from "../../components/Single";
 const Article = ({ article, headerNav }) => {
 
     // const imageUrl = getStrapiMedia(article.attributes.image);
-
+    console.log(article.attributes);
     const seo = {
         metaTitle: article.attributes.title,
         metaDescription: article.attributes.description,
@@ -22,17 +22,17 @@ const Article = ({ article, headerNav }) => {
         content: article.attributes.content,
         date: article.attributes.createdAt,
         author: article.attributes.name,
-        img: article,
-        backTo: "article"
+        img: article.attributes.image,
+        imgUrl: article.attributes.image.data.attributes.url,
+        backTo: "article",
+        authorName: article.attributes.author.data.attributes.name,
+        authorImg: article.attributes.author.data.attributes.picture,
     }
-
 
     return (
         <Layout headerClass="header__single" headerNav={headerNav}>
             {/*<Seo seo={seo} />*/}
-            <main className="main">
-                <Single single={single} />
-            </main>
+            <Single single={single} />
         </Layout>
     );
 };
