@@ -1,13 +1,13 @@
 .section{
   &.light{
-    background-color: $bg-color;
+    background-color: $bg-color-light;
   }
   &.dark.line-bottom{
     border-bottom: 1px solid $primary-light;
   }
   &.dark{
     background-color: $dark-bg-color;
-    color: $bg-color;
+    color: $bg-color-light;
     p{
       color: rgba($white,0.64);
     }

@@ -1,14 +1,19 @@
 $white: #ffffff;
 $dark-bg-color: #28293E;
-$dark-color: #391400;
+$dark-bg-color: #0a192f;
 
-$light-bg-color: #F2F2F2;
+// the dark text color on white background
+$dark-color: #391400;
+$dark-color: $white;
+
 
 $primary: #EF6D58;
+$primary: #1E959B;
 $primary-light: #F3D1BF;
 $secondary: #B550F8;
 
-$bg-color: #FDF0E9;
+$bg-color-light: #FDF0E9;
+$bg-color-light: #112240;
 
 $border-color: #3A3C56;
 

@@ -1,5 +1,6 @@
 @import "styles/utilities/mixins";
 @import "styles/utilities/colors";
+@import "styles/utilities/variables";
 
 .single{
 
@@ -9,8 +10,13 @@
   line-height: 1.4em;
   font-weight: 400;
   color: $dark-color;
-  max-width: 768px;
+  max-width: 800px;
+
   margin: 0 auto;
+  padding: 30px;
+  overflow: hidden;
+  border-radius: 6px;
+  background-color: $dark-bg-color;
 }
 .information{
   max-width: 768px;
@@ -62,22 +68,25 @@
     box-shadow: 0 1px 5px rgba(0,0,0,0.4) inset, 0 0 20px rgba(0,0,0,0.2) inset;
     border-radius: 4px;
   }
-
   pre {
-    transition: .7s ease-in-out;
-    overflow-x: auto;
-    scrollbar-width: none;
-    scroll-behavior: smooth;
-    padding: 15px;
-    border-radius: 10px;
-    color: #aaa;
-    background-color: #222;
-    white-space: pre;
-    text-shadow: 0 1px 0 #000;
-    border-bottom: 1px solid #555;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.4) inset, 0 0 20px rgba(0,0,0,0.2) inset;
-    font: 16px/24px 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+    border-radius: $border-r-form;
   }
+
+  //pre {
+  //  transition: .7s ease-in-out;
+  //  overflow-x: auto;
+  //  scrollbar-width: none;
+  //  scroll-behavior: smooth;
+  //  padding: 15px;
+  //  border-radius: 10px;
+  //  color: #aaa;
+  //  background-color: #222;
+  //  white-space: pre;
+  //  text-shadow: 0 1px 0 #000;
+  //  border-bottom: 1px solid #555;
+  //  box-shadow: 0 1px 5px rgba(0,0,0,0.4) inset, 0 0 20px rgba(0,0,0,0.2) inset;
+  //  font: 16px/24px 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+  //}
   ul,ol{
     padding-left: 15px;
     margin-bottom: 30px;
@@ -106,7 +115,7 @@
   h2,h3 {
     font-weight: 700;
     margin: 0.8em 0 .5em;
-    color: #391400;
+    color: $dark-color;
   }
   h2{
     font-size: 32px;
@@ -131,11 +140,23 @@
   }
   blockquote{
     background: #F9E5DA;
+    background: $primary;
     border-radius: 6px;
-    padding: 5px 20px;
-    margin: 0;
+    padding: 12px 20px;
     font-size: 18px;
     line-height: 1.6em;
+    margin: 0 0 15px 0;
+    *{
+      color: $white;
+    }
+    p{
+      padding: 0;
+      margin: 0;
+    }
+    p + *{
+      margin-bottom: 12px;
+    }
+
   }
 }
 .author{

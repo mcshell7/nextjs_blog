@@ -19,11 +19,9 @@ const PortfolioCard = ({ item }) => {
     }
     return (
         <div className={styles.card}>
-            <div className={styles.img}>
-                <a href={`/portfolio/${itemProps.slug}`}>
-                    <GetImage data={itemProps.img}/>
-                </a>
-            </div>
+            <a className={styles.img} href={`/portfolio/${itemProps.slug}`}>
+                <GetImage data={itemProps.img}/>
+            </a>
             <div className={styles.content}>
                 <h2 className={styles.title}>
                     <a href={`/portfolio/${itemProps.slug}`}>

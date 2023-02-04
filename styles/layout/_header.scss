@@ -1,15 +1,19 @@
 .header{
-  background: transparent;
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 10;
-  .logo{
-    line-height: 1;
-    font-size: 12px;
-    color: white;
-    text-transform: uppercase;
+  transition: all 0.5s;
+  background-color: $dark-bg-color;
+  &.hidden {
+    visibility: hidden;
+    transition: all 0.5s;
+    transform: translateY(-100%);
+  }
+  &.move{
+    box-shadow: 0 10px 30px -10px $dark-bg-color;
+    background-color: rgba($dark-bg-color, 0.97) ;
   }
 
   &__inner{

@@ -19,8 +19,8 @@ const GetImage = ({data}) => {
                         src="/img/image-not-found.png"
                         alt="image-not-found.png"
                         className="hookImg"
-                        data-src="../public/img/image-not-found.png"
-                        data-srcset="../public/img/image-not-found.png"
+                        data-src="/img/image-not-found.png"
+                        data-srcset="/img/image-not-found.png"
                     />
             }
         </>

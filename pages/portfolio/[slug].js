@@ -5,7 +5,7 @@ import { fetchAPI } from "../../lib/api";
 import { getStrapiMedia } from "../../lib/media";
 import PortfolioSingle from "../../components/PortfolioSingle";
 
-const Portfolio = ({ article, headerNav }) => {
+const Portfolio = ({ article, navMenu }) => {
 
     // const imageUrl = getStrapiMedia(article.attributes.image);
 
@@ -24,7 +24,7 @@ const Portfolio = ({ article, headerNav }) => {
     }
 
     return (
-        <Layout  headerClass="header__single" headerNav={headerNav.data}>
+        <Layout  headerClass="header__single" navMenu={navMenu.data}>
             <Seo seo={seo} />
             <PortfolioSingle item={item} />
         </Layout>
@@ -51,10 +51,10 @@ export async function getStaticProps({ params }) {
         },
         populate: "*",
     });
-    const headerNavRes = await fetchAPI("/navs");
+    const navMenuRes = await fetchAPI("/navs");
 
     return {
-        props: { article: articlesRes.data[0], headerNav: headerNavRes },
+        props: { article: articlesRes.data[0], navMenu: navMenuRes },
         revalidate: 1,
     };
 }

@@ -3,27 +3,22 @@ import GetImage from "./GetImage";
 
 const Card = ({ article }) => {
 
+    console.log(article.attributes.image);
+
     const itemProps = {
         title: article.attributes.title,
         // date: article.attributes.category.data,
         author: article.attributes.name,
-        img: article.attributes.image,
+        img: null,
         slug: article.attributes.slug
     }
-
+    // img check 
+    if (article.attributes.image.data !== null){
+        itemProps.img = article.attributes.image;
+    }
 
     const articleData = article.attributes.category.data;
-    const checkingData = (checkObject) => {
 
-        if (checkObject !== null) {
-            return '<div className={styles.category>'
-                +
-                articleData.attributes.name
-                +
-                '</div>';
-        }
-    }
-    const catName = checkingData(articleData);
     const myDate = article.attributes.createdAt;
 
     function renderElement(checkObject){

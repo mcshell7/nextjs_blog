@@ -2,10 +2,10 @@ import {fetchAPI} from "../lib/api";
 import Seo from "../components/seo";
 import Layout from "../components/layout";
 import AboutSection from "../components/AboutSection";
-const About = ({headerNav, about}) => {
+const About = ({navMenu, about}) => {
 
     return (
-        <Layout mainClass="main--about" headerNav={headerNav} headerClass="header__single" >
+        <Layout mainClass="main--about" navMenu={navMenu} headerClass="header__single" >
             <div className="container container-sm">
                 <AboutSection about={about} />
             </div>
@@ -14,7 +14,7 @@ const About = ({headerNav, about}) => {
 };
 export async function getStaticProps() {
     // Run API calls in parallel
-    const [headerNavRes, aboutRes] = await Promise.all([
+    const [navMenuRes, aboutRes] = await Promise.all([
         fetchAPI("/navs", { populate: "*" }),
         fetchAPI("/about", {
             populate: "*"
@@ -23,7 +23,7 @@ export async function getStaticProps() {
 
     return {
         props: {
-            headerNav: headerNavRes.data,
+            navMenu: navMenuRes.data,
             about: aboutRes.data
         },
         revalidate: 1,

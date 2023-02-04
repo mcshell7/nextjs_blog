@@ -3,11 +3,10 @@ import Layout from "../../components/layout";
 import Articles from "../../components/Articles";
 import {fetchAPI} from "../../lib/api";
 
-
-const Blog = ({ articles, headerNav, homepage }) => {
+const Blog = ({ articles, navMenu, homepage }) => {
 
     return (
-        <Layout headerNav={headerNav} headerClass="header__single">
+        <Layout navMenu={navMenu} headerClass="header__single">
             <Seo seo={homepage.attributes.seo} />
                 <div className="container container-lg">
                     {/*<h1>{category.attributes.name}</h1>*/}
@@ -18,7 +17,7 @@ const Blog = ({ articles, headerNav, homepage }) => {
 };
 export async function getStaticProps() {
     // Run API calls in parallel
-    const [articlesRes, headerNavRes, homepageRes] = await Promise.all([
+    const [articlesRes, navMenuRes, homepageRes] = await Promise.all([
         fetchAPI("/articles", { populate: ["image", "category"] }),
         fetchAPI("/navs", { populate: "*" }),
         fetchAPI("/homepage", {
@@ -30,11 +29,33 @@ export async function getStaticProps() {
     return {
         props: {
             articles: articlesRes.data,
-            headerNav: headerNavRes.data,
+            navMenu: navMenuRes.data,
             homepage: homepageRes.data,
         },
         revalidate: 1,
     };
 }
+// export async function getStaticPaths(context) {
+//     // Get total number of posts from API.
+//     const totalPages = await getTotalPagesFromAPI()
+//     const numberOfPages = Math.ceil(totalPages / 10)
+//
+//     // Build paths `blog/0`, `blog/1` ...etc.
+//     const paths = Array(numberOfPages)
+//         .fill(0)
+//         .map((_, page) => ({
+//             params: {
+//                 page: `${page + 1}`,
+//             },
+//         }))
+//
+//     return {
+//         paths,
+//         fallback: "false",
+//     }
+// }
+
+
+
 
 export default Blog;

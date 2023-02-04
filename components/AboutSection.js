@@ -13,7 +13,7 @@ const AboutSection = ({about}) => {
     }
 
     return (
-        <section className="section section-about">
+        <section className="section section-about light">
             <div className="container">
                 <div className="inner flex">
                     <div className="left">

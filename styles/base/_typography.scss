@@ -1,10 +1,11 @@
 @for $i from 1 through 6 {
   .h#{$i}{
+    text-transform: capitalize;
     &.light{
-      color: white;
+      color: $white;
     }
     &.dark{
-      color: #391400;
+      color: $dark-color;
     }
     &.center{
       text-align: center;
@@ -56,6 +57,33 @@ h5,.heading-5{
   }
   &--white{
     background-color: $white;
+    background-color: $bg-color-light ;
     color: $dark-color;
   }
+}
+
+.social {
+  font-size: 20px;
+  svg{
+    width: 20px;
+  }
+  &__list {
+    display: flex;
+
+  }
+  &__item {
+    &:not(:last-child){
+      margin-right: 15px;
+    }
+  }
+  &__item-link {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: $primary;
+  }
+
 }

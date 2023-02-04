@@ -1,21 +1,5 @@
-$white: #ffffff;
-$dark-bg-color: #28293E;
-$dark-color: #391400;
-
-$light-bg-color: #F2F2F2;
-$bg-color: #FDF0E9;
-
-$primary: #EF6D58;
-$primary-light: #F3D1BF;
-$secondary: #B550F8;
-
-$bg-color: #FDF0E9;
-
-$border-color: #3A3C56;
-
-$transition-default: 0.5s;
-
-
+@import "styles/utilities/colors";
+@import "styles/utilities/variables";
 
 .button{
   display: inline-block;

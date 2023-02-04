@@ -4,11 +4,11 @@ import {fetchAPI} from "../../lib/api";
 import PortfolioCard from "../../components/PortfolioCard";
 import PortfolioList from "../../components/PortfolioList";
 
-const Portfolio = ({ items, headerNav, homepage }) => {
+const Portfolio = ({ items, navMenu, homepage }) => {
 
 
     return (
-        <Layout headerNav={headerNav} headerClass="header__single">
+        <Layout navMenu={navMenu} headerClass="header__single">
             <Seo seo={homepage.attributes.seo} />
             <div className="container container-lg">
                 <PortfolioList items={items} title="Portfolio" />
@@ -18,7 +18,7 @@ const Portfolio = ({ items, headerNav, homepage }) => {
 };
 export async function getStaticProps() {
     // Run API calls in parallel
-    const [itemsRes, headerNavRes, homepageRes] = await Promise.all([
+    const [itemsRes, navMenuRes, homepageRes] = await Promise.all([
         fetchAPI("/portfolios", { populate: ["image", "client"] }),
         fetchAPI("/navs", { populate: "*" }),
         fetchAPI("/homepage", {
@@ -31,7 +31,7 @@ export async function getStaticProps() {
     return {
         props: {
             items: itemsRes.data,
-            headerNav: headerNavRes.data,
+            navMenu: navMenuRes.data,
             homepage: homepageRes.data,
         },
         revalidate: 1,

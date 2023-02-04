@@ -15,7 +15,7 @@ import ContactSection from "../components/ContactSection";
 import Summary from "../components/Summary";
 import Heading from "../components/Heading";
 
-const Home = ({ articles, headerNav, homepage, nav }) => {
+const Home = ({ articles, navMenu, homepage, nav }) => {
 
   const homeData = homepage.attributes;
   const { text, theme, href } = homepage.attributes.FirstScreen.btn;
@@ -24,11 +24,11 @@ const Home = ({ articles, headerNav, homepage, nav }) => {
   const imageUrl = getStrapiMedia(homeData.FirstScreen.img);
 
   return (
-      <Layout mainClass="main--index" headerNav={headerNav} headerClass="header__single">
+      <Layout mainClass="main--index" navMenu={navMenu} headerClass="header__single">
         <Seo seo={homeData.seo} />
         <StdSection text={homeData.FirstScreen.text} title={homeData.FirstScreen.title} subtitle={homeData.FirstScreen.subtitle} button={button}  image={imageUrl}/>
         <Summary />
-        <section className="section section-about">
+        <section className="light section section-about">
           <div className="container">
             <div className="inner flex">
               <div className="left">
@@ -124,19 +124,19 @@ const Home = ({ articles, headerNav, homepage, nav }) => {
           </div>
         </section>
 
-        <ContactSection/>
         <section className="section section-articles">
           <div className="container container-sm">
             <Articles articles={articles} />
           </div>
         </section>
+        <ContactSection/>
       </Layout>
   );
 };
 
 export async function getStaticProps() {
   // Run API calls in parallel
-  const [articlesRes, headerNavRes, homepageRes, navRes] = await Promise.all([
+  const [articlesRes, navMenuRes, homepageRes, navRes] = await Promise.all([
     fetchAPI("/articles", { populate: ["image", "category"] }),
     fetchAPI("/navs", { populate: "*" }),
     fetchAPI("/homepage", {
@@ -160,7 +160,7 @@ export async function getStaticProps() {
   return {
     props: {
       articles: articlesRes.data,
-      headerNav: headerNavRes.data,
+      navMenu: navMenuRes.data,
       homepage: homepageRes.data,
 
     },

@@ -1,6 +1,6 @@
 import styles from '../../styles/components/button.module.scss';
 import cx from 'classnames';
-const Button = ({text, href, theme, typeSubmit, classNames}) => {
+const Button = ({text, href, theme, typeSubmit, classNames, target}) => {
 
 
     const colorType = (theme) => {
@@ -47,6 +47,7 @@ const Button = ({text, href, theme, typeSubmit, classNames}) => {
                             ({ [`${styles.button} ${colorType(theme)}`]: true })
                         )
                     }
+                    target={target}
                 >
                     {text}
                 </a>

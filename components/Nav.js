@@ -1,18 +1,14 @@
-import MyLink from "./MyLink.js";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import styles from "../styles/components/nav.module.scss"
 
-const Nav = ({headerNav}) => {
+const Nav = ({navMenu}) => {
     const { pathname } = useRouter();
-
-
 
     return (
         <ul className="menu list">
             {
-                headerNav != null ?
-                headerNav.map((item) => {
+                navMenu != null ?
+                navMenu.map((item) => {
                     return (
                         <li key={item.id} className="menu__list-item">
                             <Link legacyBehavior href={item.attributes.slug}>

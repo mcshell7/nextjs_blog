@@ -7,6 +7,8 @@ input,textarea{
   border-radius: $border-r-form;
   border: 1px solid $primary-light;
   outline: none;
+  background-color: $white;
+  background-color: $bg-color-light;
   @include transition(1s ease );
   @include on-event {
     border: 1px solid $primary;
@@ -14,17 +16,21 @@ input,textarea{
 }
 textarea {
   min-height: 120px;
+  resize: none;
 }
 
 .form{
   padding: 57px 48px 48px 48px;
   background-color: $white;
+  background-color: $bg-color-light;
   max-width: 570px;
   width: 100%;
   border-radius: $border-r-form;
   &__item{
-    margin-bottom: 1rem;
     position: relative;
+    &:not(:last-child){
+      margin-bottom: 1rem;
+    }
   }
   &__success{
     padding: 57px 48px 48px 48px;
@@ -40,5 +46,13 @@ textarea {
       color: $dark-color;
       font-size: 20px;
     }
+  }
+}
+
+.button{
+  &--submit{
+    margin-top: 1rem;
+    display: block;
+    margin-left: auto;
   }
 }

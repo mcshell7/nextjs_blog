@@ -8,6 +8,7 @@ const PortfolioList = ({ items, title}) => {
         return (a, b) => a[field] > b[field] ? 1 : -1;
     }
     let sortedItems = items.sort(byDate("createdAt"));
+
     return (
         <div className="">
             <Heading tag="h1" text={title} theme="dark" align="center" />
@@ -29,7 +30,6 @@ const PortfolioList = ({ items, title}) => {
                     ""
             }
         </div>
-
     );
 };
 

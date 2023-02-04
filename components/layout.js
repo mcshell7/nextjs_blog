@@ -4,9 +4,9 @@ import Footer from "./Footer";
 import cx from "classnames";
 import styles from "../styles/footer.module.scss";
 
-const Layout = ({ children, headerNav, seo, headerClass, mainClass }) => (
+const Layout = ({ children, navMenu, seo, headerClass, mainClass }) => (
     <>
-        <Header headerClass={headerClass} headerNav={headerNav}/>
+        <Header headerClass={headerClass} navMenu={navMenu}/>
         <main
             className={
                 cx(
@@ -16,7 +16,7 @@ const Layout = ({ children, headerNav, seo, headerClass, mainClass }) => (
         >
             {children}
         </main>
-        <Footer  />
+        <Footer navMenu={navMenu} />
     </>
 );
 
@@ -27,7 +27,7 @@ export async function getStaticProps({ params }) {
     return {
         props: {
             category: matchingCategories.data[0],
-            headerNav: allCategories,
+            navMenu: allCategories,
         },
         revalidate: 1,
     };
